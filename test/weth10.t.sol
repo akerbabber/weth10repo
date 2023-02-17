@@ -1,21 +1,17 @@
 pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
-import "../src/Counter.sol";
 import "../src/weth10.sol";
 import "../src/Attacker.sol";
 
 contract Weth10Test is Test {
     WETH10 public weth;
     Attacker public attacker;
-    UserReceiver public userReceiver;
     address owner;
     address bob;
 
     function setUp() public {
         weth = new WETH10();
-
-        userReceiver = new UserReceiver(payable(address(weth)));
         bob = makeAddr("bob");
         attacker = new Attacker(payable(address(weth)), payable(bob));
 
