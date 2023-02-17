@@ -34,7 +34,7 @@ The attacker deploys a contract with an `exploit()` function which:
 
 ## Mitigation
 
-To mitigate this vulnerability, developers should carefully consider their use of reentrancy guards and ensure that all relevant functions are protected. As a community, it's important that we continue to share information and best practices to build a more secure and reliable blockchain ecosystem.
+To mitigate this vulnerability, developers should carefully consider their use of reentrancy guards and ensure that all relevant functions are protected. One approach is to use the "check-set-transact" pattern, which involves checking a condition, setting a state variable, and then executing the desired transaction. This can help ensure that the state is correctly updated before any external calls are made, reducing the risk of reentrancy attacks.
 
 ## How to run tests
 
